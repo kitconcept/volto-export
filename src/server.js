@@ -1,8 +1,8 @@
 /* eslint no-console: 0 */
 import express from 'express';
-import { cloneDeepWith, fromPairs, isEmpty, map } from 'lodash';
+import { fromPairs, isEmpty, map } from 'lodash';
 import { getContent } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { recursiveFlattenToAppURL, recursiveremoveKey } from './helpers';
 
 function sortByArray(blocks, blocks_layout) {
   return fromPairs(map(blocks_layout.items, (key) => [key, blocks[key]]));
@@ -17,29 +17,6 @@ function jsonExporter(req, res, next) {
       .replace(/\//g, '.')}.json"`,
   );
   res.set('Content-Type', 'application/json');
-
-  function recursiveFlattenToAppURL(obj) {
-    function visitor(value, parent) {
-      if (typeof value === 'string') {
-        return flattenToAppURL(value);
-      }
-    }
-
-    return cloneDeepWith(obj, visitor);
-  }
-
-  function recursiveremoveKey(obj, key) {
-    function removeKey(obj) {
-      let prop;
-      for (prop in obj) {
-        if (prop === key) delete obj[prop];
-        else if (typeof obj[prop] === 'object') removeKey(obj[prop]);
-      }
-      return obj;
-    }
-
-    return removeKey(cloneDeepWith(obj));
-  }
 
   store
     .dispatch(getContent(req.path.replace('/export', '')))
@@ -58,8 +35,7 @@ function jsonExporter(req, res, next) {
       return recursiveFlattenToAppURL(content);
     })
     .then((content) => {
-      console.log(content);
-      return recursiveremoveKey(content, '@type');
+      return recursiveremoveKey(content, 'image_scales');
     })
     .then((content) => {
       return new Promise(function (resolve, reject) {
