@@ -7,3 +7,9 @@
 -->
 
 <!-- towncrier release notes start -->
+
+## 1.0.0 (2023-01-10)
+
+### Feature
+
+- Exports any content to plone.restapi/kitconcept.contentcreator JSON format @sneridagh [#1](https://github.com/kitconcept/volto-export/pull/1)

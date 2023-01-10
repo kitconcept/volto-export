@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-export",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "volto-export: Volto add-on that exports objects in the plone.restapi/kitconcept.contentcreator format",
   "main": "src/index.js",
   "license": "MIT",
