@@ -1,6 +1,7 @@
-node_modules
-project
-addon-testing-project
+news
+towncrier.toml
+.changelog.draft
+node_modules/
 
 # yarn 3
 .pnp.*

@@ -1,7 +1,7 @@
 {
   "name": "@kitconcept/volto-export",
   "version": "0.1.0",
-  "description": "volto-export: Volto add-on",
+  "description": "volto-export: Volto add-on that exports objects in the plone.restapi/kitconcept.contentcreator format",
   "main": "src/index.js",
   "license": "MIT",
   "keywords": [
@@ -11,9 +11,15 @@
     "react"
   ],
   "scripts": {
-    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon"
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "dry-release": "release-it --dry-run",
+    "release": "release-it",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release-alpha": "release-it --preRelease=alpha"
   },
   "devDependencies": {
-    "@plone/scripts": "^2.2.1"
-  }
+    "@plone/scripts": "^2.2.2",
+    "release-it": "^15.6.0"
+  },
+  "packageManager": "yarn@3.2.3"
 }
