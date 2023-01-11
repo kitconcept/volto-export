@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.1.0 (2023-01-11)
+
+### Feature
+
+- Add proper README @sneridagh
+  Add changelog checker GHA @sneridagh [#2](https://github.com/kitconcept/volto-export/pull/2)
+
+
 ## 1.0.0 (2023-01-10)
 
 ### Feature
