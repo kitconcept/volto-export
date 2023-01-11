@@ -3,7 +3,6 @@
 [![NPM](https://img.shields.io/npm/v/@kitconcept/volto-export.svg)](https://www.npmjs.com/package/@kitconcept/volto-export)
 [![Build Status](https://github.com/kitconcept/volto-export/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-export/actions)
 [![Build Status](https://github.com/kitconcept/volto-export/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-export/actions)
-[![Build Status](https://github.com/kitconcept/volto-export/actions/workflows/acceptance.yml/badge.svg)](https://github.com/kitconcept/volto-export/actions)
 
 ![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/master/kitconcept.png)
 
